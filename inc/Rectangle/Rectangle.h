@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <optional>
 
 class RectangleC 
 {
@@ -11,6 +12,8 @@ public:
     int32_t GetY() const;
     int32_t GetWidth() const;
     int32_t GetHeight() const;
+    bool IntersectsWith(const RectangleC& iOther) const;
+    std::optional<RectangleC> GetIntersection(const RectangleC& iOther) const;
 
 private:
     int32_t mX;
