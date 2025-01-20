@@ -1,4 +1,4 @@
-#include "Rectangle/Rectangle.h"
+#include "Shape/Rectangle.h"
 #include <gtest/gtest.h>
 
 TEST(RectangleTest, CreateRectangle) {

@@ -40,11 +40,25 @@ target_include_directories(RectangleLib
     PUBLIC ${PROJECT_SOURCE_DIR}/inc
 )
 
+add_library(JsonParserLib
+    src/RectangleJsonParser.cpp
+)
+
+target_include_directories(JsonParserLib
+    PUBLIC ${PROJECT_SOURCE_DIR}/inc
+)
+
+target_link_libraries(JsonParserLib
+    PUBLIC
+        RectangleLib
+        nlohmann_json::nlohmann_json
+)
+
 add_executable(Rectangle src/main.cpp)
 target_link_libraries(Rectangle
     PRIVATE 
         RectangleLib 
-        nlohmann_json::nlohmann_json
+        JsonParserLib
 )
 
 add_subdirectory(test)
